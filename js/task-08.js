@@ -2,9 +2,9 @@ const formEl = document.querySelector(".login-form");
 formEl.addEventListener("submit", (event) => {
   event.preventDefault();
   const elementsOfForm = event.currentTarget.elements;
-  const email = elementsOfForm.email.value;
+  let email = elementsOfForm.email.value;
   console.log(email);
-  const password = elementsOfForm.password.value;
+  let password = elementsOfForm.password.value;
   console.log(password);
   if (email === null || password === null || email === "" || password === "") {
     alert("All the inputs must be fullfilled");
@@ -13,6 +13,7 @@ formEl.addEventListener("submit", (event) => {
       email,
       password,
     };
+    formEl.reset();
     console.log(obj);
   }
 });

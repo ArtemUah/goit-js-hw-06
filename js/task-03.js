@@ -23,10 +23,12 @@ const listOfImages = images.forEach((element) => {
   const galleryEl = document.querySelector(".gallery");
   galleryEl.appendChild(itemEl);
   galleryEl.style.display = "flex";
+  galleryEl.style.gap = "30px";
+  galleryEl.style.listStyle = 'none';
   imgEl.style.display = "block";
   imgEl.style.height = "100%";
   imgEl.style.width = "100%";
-  galleryEl.style.gap = "30px";
+  
   itemEl.style.width = "calc(100% / 3 - 60px)";
 
   console.log(galleryEl);

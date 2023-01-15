@@ -25,6 +25,7 @@ function createBoxes(amount) {
     divBoXEl.style.gap = "10px";
     console.log(divBoXEl);
   });
+  size = 20;
 }
 
 const btnCreateEl = document.querySelector("button[data-create]");
@@ -43,5 +44,6 @@ btnDestroyEl.addEventListener("click", (event) => {
   const boxesToDelete = document.querySelectorAll(".created-boxes");
   boxesToDelete.forEach((element) => {
     element.remove();
+    
   });
 });
