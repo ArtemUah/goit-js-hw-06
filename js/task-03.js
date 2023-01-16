@@ -13,23 +13,23 @@ const images = [
   },
 ];
 
-const listOfImages = images.forEach((element) => {
+const listOfImages = images.map((element) => {
   const itemEl = document.createElement("li");
   const imgEl = document.createElement("img");
   imgEl.src = element.url;
   imgEl.alt = element.alt;
   imgEl.width = 240;
-  itemEl.appendChild(imgEl);
-  const galleryEl = document.querySelector(".gallery");
-  galleryEl.appendChild(itemEl);
-  galleryEl.style.display = "flex";
-  galleryEl.style.gap = "30px";
-  galleryEl.style.listStyle = 'none';
   imgEl.style.display = "block";
   imgEl.style.height = "100%";
   imgEl.style.width = "100%";
-  
-  itemEl.style.width = "calc(100% / 3 - 60px)";
 
-  console.log(galleryEl);
+  itemEl.appendChild(imgEl);
+  itemEl.style.width = "calc(100% / 3 - 60px)";
+  return itemEl;
 });
+
+const galleryEl = document.querySelector(".gallery");
+galleryEl.style.display = "flex";
+galleryEl.style.gap = "30px";
+galleryEl.style.listStyle = "none";
+galleryEl.append(...listOfImages);

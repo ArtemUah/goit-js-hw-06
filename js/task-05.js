@@ -1,8 +1,6 @@
 const inputEl = document.getElementById("name-input");
-let outputData = "";
+const outputEl = document.getElementById('name-output');
 
-const inputData = inputEl.addEventListener("keydown", (event) => {
-  const outputEl = document.getElementById("name-output");
-  outputData += event.key;
-  outputEl.textContent = outputData;
-});
+inputEl.addEventListener('input', event => {
+  outputEl.textContent = event.currentTarget.value || "Anonymous";
+})
